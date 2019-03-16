@@ -1,23 +1,30 @@
-class Conta{
-    String titular;
-    int numero;
-    String agencia;
-    double saldo;
-    Data dataAbertura;
+public class Conta{
+    private String titular;
+    private int numero;
+    private String agencia;
+    private double saldo;
+    private Data dataAbertura;
     
-    void deposita(double valor){
+    public Conta(String titular, int numero, String agencia, Data dataAbertura){
+        this.titular = titular;
+        this.numero = numero;
+        this.agencia = agencia;
+        this.dataAbertura = dataAbertura;
+    }
+
+    public void deposita(double valor){
         this.saldo += valor;
     }
 
-    void saca (double valor){
+    public void saca (double valor){
         this.saldo -= valor;
     }
 
-    double calculaRendimento(){
+    public double calculaRendimento(){
         return this.saldo * 0.1;
     }
 
-    String recuperaDadosParaImpressao(){
+    public String getAllDatas(){
         String dados =  "Titular: " + this.titular+
                         "\nNumero da conta: "+ this.numero+
                         "\nAgencia: "+ this.agencia+
