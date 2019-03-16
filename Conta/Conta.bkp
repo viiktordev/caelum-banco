@@ -1,0 +1,24 @@
+class Conta{
+
+    int numero;
+    Cliente titular;
+    double saldo;
+    double limite = 4000;
+
+    void deposita(double valor){
+        this.saldo += valor;
+    }
+
+    boolean saca (double valor){
+        if( valor <= this.saldo + this.limite){
+            this.saldo -= valor;
+            return true;
+        }
+        return false;
+    }
+
+    void transfere(Conta destino, double valor){
+        this.saldo -= valor;
+        destino.saldo += valor;
+    }   
+}
